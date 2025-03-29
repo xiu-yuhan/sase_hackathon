@@ -1,8 +1,10 @@
+from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, accuracy_score
-
-from stroker import returnPatientValueIntoMaine
+from sklearn.metrics import accuracy_score
+#from stroker import returnPatientValueIntoMaine
+import stroker
+import pandas as pd
 # Assume:
 # X is a 2D array-like structure of shape (n_samples, 11)
 # y is a 1D array-like structure of shape (n_samples,)
@@ -11,9 +13,20 @@ from stroker import returnPatientValueIntoMaine
 # X.shape -> (n_samples, 11)
 # y.shape -> (n_samples,)
 
-PatientVariables = returnPatientValueIntoMaine
-for patient in PatientVariables:
-    print(patient.id + " " + patient.gender + " " + patient.age + " " + patient.hypertension + " " + patient.heart_disease + " " + patient.ever_married + " " + patient.work_type )
+patients = stroker.doWork()
+
+
+# Assuming you have a list of patient dicts
+df = pd.DataFrame([p.__dict__ for p in patients])
+
+# One-hot encode categorical features
+df_encoded = pd.get_dummies(df, columns=['gender', 'work_type', 'residence', 'smoking_status', 'ever_married'])
+
+# Separate features and target
+X = df_encoded.drop(columns=['stroke'])
+y = df_encoded['stroke']
+
+
 
 
 #Stratified train_test_split
@@ -36,3 +49,4 @@ y_pred = model.predict(X_test)
 # Evaluate
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
+
