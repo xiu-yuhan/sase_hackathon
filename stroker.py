@@ -43,7 +43,7 @@ def doWork():
         if pL[i][9] != "N/A":
             pbmi = pL[i][9]
         else:
-            print('checked')
+            #print('checked')
             if page >= 2 and page <= 5:
                 pbmi == 16.5
             if page >= 6 and page <= 7:
@@ -89,8 +89,9 @@ def doWork():
         patientList[i] = Patient(pid,pgender, page, phypert, pheart_, pever_m, pwork_t, preside, pavg_gl, pbmi, psmokin,pstroke)
 
     
-    for patient in patientList:
-        print("ID: " + patient.id + " Gender: " + patient.gender + " Age: " + str(patient.age) + " Hypertension: " + patient.hypertension + " Heart Disease: " + patient.heart_disease + " Ever Married: " + patient.ever_married + " Work Type: " + patient.work_type + " Residence: " + patient.residence + " Glucose Levels: " + patient.avg_glucose_levels + " BMI: " + str(patient.bmi) + " Smoking Status: " + patient.smoking_status + " Stroke: " + patient.stroke + "\n")
+    #for patient in patientList:
+        #identifier,id, gender, age, hypertension, heart_disease, ever_married, work_type, residence, avg_glucose_levels, bmi, smoking_status, stroke
+        #print(patient.id +", "+ patient.gender + ", " + str(patient.age) + ", " + patient.hypertension + ", " + patient.heart_disease + ", " + patient.ever_married + ", " + patient.work_type + ", " + patient.residence + ", " + patient.avg_glucose_levels + ", " + str(patient.bmi) + ", " + patient.smoking_status + "," + patient.stroke + "\n")
     return(patientList)
 
 
