@@ -90,5 +90,3 @@ if __name__ == "__main__":
         page = int(round(page))
         patientList[i] = Patient(pid,pgender, page, phypert, pheart_, pever_m, pwork_t, preside, pavg_gl, pbmi, psmokin,pstroke)
     
-    for i in range(len(patientList)):
-        print(patientList[i].age)
