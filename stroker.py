@@ -18,19 +18,17 @@ class Patient:
         identifier.bmi = bmi
         identifier.smoking_status = smoking_status
         identifier.stroke = stroke
-
-
-
-if __name__ == "__main__":
     
+    
+def doWork():
     pL = []
     patientList = []
     with open('healthcare-dataset-stroke-data.csv', mode ='r')as file:
         csvFile = csv.reader(file)
         for lines in csvFile:
             pL.append(lines)
-        
         del pL[0]
+        
     for i in range (len(pL)):
         patientList.append(pL[i][0])
         pid     = pL[i][0]
@@ -89,4 +87,8 @@ if __name__ == "__main__":
         #streamlining age
         page = int(round(page))
         patientList[i] = Patient(pid,pgender, page, phypert, pheart_, pever_m, pwork_t, preside, pavg_gl, pbmi, psmokin,pstroke)
+
+        return(patientList)
+if __name__ == "__main__":
+    doWork()
     
