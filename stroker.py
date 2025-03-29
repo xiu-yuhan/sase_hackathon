@@ -86,7 +86,9 @@ if __name__ == "__main__":
                 pbmi == 28.1
         psmokin = pL[i][10]
         pstroke = pL[i][11]
+        #streamlining age
+        page = int(round(page))
         patientList[i] = Patient(pid,pgender, page, phypert, pheart_, pever_m, pwork_t, preside, pavg_gl, pbmi, psmokin,pstroke)
     
     for i in range(len(patientList)):
-        print(patientList[i].bmi)
+        print(patientList[i].age)
