@@ -1,0 +1,23 @@
+#Challenge 1, Logistic Regression and accuracy
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97       972
+           1       0.00      0.00      0.00        50
+
+    accuracy                           0.95      1022
+   macro avg       0.48      0.50      0.49      1022
+weighted avg       0.90      0.95      0.93      1022
+
+Accuracy: 0.9510763209393346
+
+# Challenge 2, balance distribution check.
+Class distribution:
+Class 0: 4861 samples
+Class 1: 249 samples
+Class distribution:
+ stroke
+0    4861
+1     249
+Name: count, dtype: int64
+
