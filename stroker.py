@@ -88,7 +88,12 @@ def doWork():
         page = int(round(page))
         patientList[i] = Patient(pid,pgender, page, phypert, pheart_, pever_m, pwork_t, preside, pavg_gl, pbmi, psmokin,pstroke)
 
-        return(patientList)
+    
+    for patient in patientList:
+        print("ID: " + patient.id + " Gender: " + patient.gender + " Age: " + str(patient.age) + " Hypertension: " + patient.hypertension + " Heart Disease: " + patient.heart_disease + " Ever Married: " + patient.ever_married + " Work Type: " + patient.work_type + " Residence: " + patient.residence + " Glucose Levels: " + patient.avg_glucose_levels + " BMI: " + str(patient.bmi) + " Smoking Status: " + patient.smoking_status + " Stroke: " + patient.stroke + "\n")
+    return(patientList)
+
+
 if __name__ == "__main__":
     doWork()
     
