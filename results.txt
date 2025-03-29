@@ -11,7 +11,10 @@ weighted avg       0.90      0.95      0.93      1022
 
 Accuracy: 0.9510763209393346
 
+#---------------------------------------------------------------------------------
+
 # Challenge 2, balance distribution check.
+
 Class distribution:
 Class 0: 4861 samples
 Class 1: 249 samples
@@ -20,4 +23,52 @@ Class distribution:
 0    4861
 1     249
 Name: count, dtype: int64
+
+#--------------------------------------------------------------------------------
+# Challenge 2, SMOTE
+
+After SMOTE: [3889 3889]
+
+#--------------------------------------------------------------------------------
+#Challenge 2, applying smote to balance training data
+
+Accuracy: 0.8043052837573386
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.83      0.89       972
+           1       0.10      0.38      0.16        50
+
+    accuracy                           0.80      1022
+   macro avg       0.53      0.60      0.52      1022
+weighted avg       0.92      0.80      0.85      1022
+
+#------------------------------------------------------------------------------
+#Challenge 2 
+
+🔍 Results for Decision Tree:
+Precision: 0.1622
+Recall:    0.2400
+F1-score:  0.1935
+----------------------------------------
+🔍 Results for Random Forest:
+Precision: 0.3750
+Recall:    0.0600
+F1-score:  0.1034
+----------------------------------------
+  bst.update(dtrain, iteration=i, fobj=obj)
+🔍 Results for XGBoost:
+Precision: 0.2143
+Recall:    0.0600
+F1-score:  0.0938
+----------------------------------------
+
+📊 Comparison Table:
+           Model  Precision  Recall  F1-score
+0  Decision Tree   0.162162    0.24  0.193548
+1  Random Forest   0.375000    0.06  0.103448
+2        XGBoost   0.214286    0.06  0.093750
+
+#-----------------------------------------------------------------------------
+Challenge 3 Heatmap presentable by code
 
